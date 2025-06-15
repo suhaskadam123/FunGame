@@ -1,0 +1,122 @@
+﻿@* <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-wrapper {
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #2c3e50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #1a252f;
+        }
+        .text-danger {
+            color: #e74c3c;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        @RenderBody()
+    </div>
+</body>
+</html> *@
+
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from 13.232.54.110/login by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Sep 2024 08:12:23 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>RainbowRush Casino</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="_token" content="aF7BBwUb6KoPp2pyxlfEnUzxTnF80qBkXgHJ3UiJ">
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- plugin css -->
+    <link href="assets/fonts/feather-font/css/iconfont.css" rel="stylesheet" />
+    <link href="assets/plugins/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" />
+    <!-- end plugin css -->
+    <!-- common css -->
+    <link href="css/app.css" rel="stylesheet" />
+    <!-- end common css -->
+
+</head>
+
+<body data-base-url="index.html">
+    <script src="assets/js/spinner.js"></script>
+    
+    <div class="login-wrapper">
+        @RenderBody()
+    </div>
+    <!-- base js -->
+    <script src="js/app.js"></script>
+    <script src="assets/plugins/feather-icons/feather.min.js"></script>
+    <!-- end base js -->
+    <!-- plugin js -->
+    <!-- end plugin js -->
+    <!-- common js -->
+    <script src="assets/js/template.js"></script>
+    <!-- end common js -->
+    @RenderSection("Scripts", required: false)
+
+</body>
+
+
+<!-- Mirrored from 13.232.54.110/login by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Sep 2024 08:12:28 GMT -->
+</html>

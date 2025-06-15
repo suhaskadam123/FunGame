@@ -1,0 +1,109 @@
+﻿@using System.Security.Claims  
+@using DataAccessLayer.Models
+
+@{  
+    Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";  
+    ViewData["Title"] = "SuperAdmin Dashboard";  
+}  
+
+@model List<User>  
+
+<div class="page-content">  
+    <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">  
+        <div>  
+            <h4 class="mb-3 mb-md-0">Welcome to Dashboard @User.Identity.Name</h4>  
+        </div>  
+    </div>  
+    <div class="row">  
+        <div class="col-12 col-xl-12 stretch-card">  
+            <div class="row flex-grow">  
+                <div class="col-lg-3 col-md-3 col-sm-3 grid-margin  stretch-card">  
+                    <div class="card card-outline-primary">  
+                        <a href="users.html">  
+                            <div class="card-body">  
+                                <div class="row">  
+                                    <div class="col-md-8">  
+                                        <h6 class="card-title mb-1">Users</h6>  
+                                        <h3 class="mb-1">@ViewBag.TotalUsers</h3>
+                                    </div>  
+                                    <div class="col-md-4 mt-1">  
+                                        <h1 class="text-right mr-3"><i data-feather="user-plus"></i></h1>  
+                                    </div>  
+                                </div>  
+                            </div>  
+                        </a>  
+                    </div>  
+                </div>  
+                <div class="col-lg-3 col-md-3 col-sm-3 grid-margin  stretch-card">
+                    <div class="card card-outline-primary">
+                        <a href="users.html">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h6 class="card-title mb-1"> TotalSuperDistributors</h6>
+                                        <h3 class="mb-1">@ViewBag.TotalSuperDistributors</h3>
+                                    </div>
+                                    <div class="col-md-4 mt-1">
+                                        <h1 class="text-right mr-3"><i data-feather="user-plus"></i></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 grid-margin  stretch-card">
+                    <div class="card card-outline-primary">
+                        <a href="users.html">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h6 class="card-title mb-1">TotalDistributors</h6>
+                                        <h3 class="mb-1">@ViewBag.TotalDistributors</h3>
+                                    </div>
+                                    <div class="col-md-4 mt-1">
+                                        <h1 class="text-right mr-3"><i data-feather="user-plus"></i></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 grid-margin  stretch-card">
+                    <div class="card card-outline-primary">
+                        <a href="users.html">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h6 class="card-title mb-1">TotalRetailers</h6>
+                                        <h3 class="mb-1">@ViewBag.TotalRetailers</h3>
+                                    </div>
+                                    <div class="col-md-4 mt-1">
+                                        <h1 class="text-right mr-3"><i data-feather="user-plus"></i></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 grid-margin  stretch-card">  
+                    <div class="card card-outline-primary">  
+                        <a href="GameBet.html">  
+                            <div class="card-body">  
+                                <div class="row">  
+                                    <div class="col-md-8">  
+                                        <h6 class="card-title mb-1">Game Bet</h6>  
+                                        <h3 class="mb-1">69917</h3>  
+                                    </div>  
+                                    <div class="col-md-4 mt-1">  
+                                        <h1 class="text-right mr-3"><i data-feather="inbox"></i></h1>  
+                                    </div>  
+                                </div>  
+                            </div>  
+                        </a>  
+                    </div>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+    <!-- row -->  
+</div>

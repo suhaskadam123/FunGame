@@ -1,0 +1,74 @@
+﻿@model DataAccessLayer.Models.User
+
+@{
+    Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
+    ViewData["Title"] = "Add  Distributer";
+}
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Add Super Distributer</h6>
+                    <form asp-action="CreateDistributer" method="post">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Username :</label>
+                                    <input asp-for="Username" class="form-control" />
+                                    <span asp-validation-for="Username" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Password :</label>
+                                    <input asp-for="Password" class="form-control" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <input type="hidden" asp-for="SuperAdminId" value="1" />
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Commission :</label>
+                                    <input asp-for="Percentage" class="form-control" />
+                                    <span asp-validation-for="Percentage" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Note :</label>
+                                    <input asp-for="Note" class="form-control" />
+                                    <span asp-validation-for="Note" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Status :</label>
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" name="Status" value="1" checked class="form-check-input" />
+                                        <label class="form-check-label">Active</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" name="Status" value="0" class="form-check-input" />
+                                        <label class="form-check-label">Inactive</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-light" onclick="window.history.back();">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
+    ViewData["Title"] = "SuperAdmin Dashboard";
+}
+@model IEnumerable<DataAccessLayer.Models.User>
+
+<div class="page-content">
+
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between mb-2">
+                    <b>AllRetailer</b>
+                    <a asp-controller="SuperAdmin" asp-action="CreateRetailer" class="btn btn-primary btn-md">Add Retailer</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered data-table" id="example">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>UserName</th>
+                                    <th>Refer Name</th>
+                                    <th>Password</th>
+                                    <th>Points</th>
+                                    <th>Date & time</th>
+                                    <th>Uniqe Id</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int no = 1;
+                                    foreach (var user in Model)
+                                    {
+                                        <tr>
+                                            <th scope="row">@no</th>
+                                            <td>
+                                                @user.Username
+
+                                            </td>
+                                            <td>@user.ReferName</td>
+                                            <td>@user.Password</td>
+                                            <td>@user.Balance</td>
+                                            <td>@(user.DateTime?.ToString("yyyy-MM-dd hh:mm:ss tt"))</td>
+                                            <td>@user.UniqueId</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a asp-controller="SuperAdmin" asp-action="EditRetailer" asp-route-id="@user.UserId" class="btn btn-outline-info">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <a asp-controller="SuperAdmin" asp-action="TransferCreditToRetailer" asp-route-id="@user.UserId" class="btn btn-outline-success">
+                                                        <i class="fas fa-arrow-up"></i>
+                                                    </a>
+                                                    <a asp-controller="SuperAdmin" asp-action="WithdrawCreditFromRetailer" asp-route-id="@user.UserId" class="btn btn-outline-warning">
+                                                        <i class="fas fa-arrow-down"></i>
+                                                    </a>
+                                                    <!-- Ban User -->
+                                                    <form asp-controller="SuperAdmin" asp-action="BanRetailer" asp-route-id="@user.UserId" method="post" style="display:inline;">
+                                                        <button type="submit" class="btn btn-outline-success" title="Ban User">
+                                                            <i class="fa fa-times-circle"></i>
+                                                        </button>
+                                                    </form>
+
+                                                    <!-- Permanently Delete User -->
+                                                    <form asp-controller="SuperAdmin" asp-action="DeleteRetailer" asp-route-id="@user.UserId" method="post" style="display:inline;" onsubmit="return confirm('Are you sure you want to permanently delete this user?');">
+                                                        <button type="submit" class="btn btn-outline-danger" title="Delete User">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </form>
+
+
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        no++;
+                                    }
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Include DataTables.js CSS and JS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Initialize DataTable
+        $('#example').DataTable({
+            "paging": true, // Enable pagination
+            "searching": true, // Enable search
+            "ordering": true, // Enable column sorting
+            "pageLength": 10, // Default records per page
+            "lengthMenu": [10, 25, 50, 100], // Options for records per page
+        })});
+</script>
