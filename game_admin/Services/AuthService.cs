@@ -44,7 +44,7 @@ namespace game_admin.Services
         public async Task<List<User>> GetAllSuperDistributors()
         {
             return await _context.Users
-                .Where(u => u.Role == "superDistributor" && u.DeleteStatus == 1)
+                .Where(u => u.Role == "superDistributor")
                 .OrderByDescending(u => u.UserId)
                 .ToListAsync();
         }
@@ -85,7 +85,7 @@ namespace game_admin.Services
         public async Task<List<User>> GetAllDistributors()
         {
             return await _context.Users
-                .Where(u => u.Role == "Distributer" && u.DeleteStatus == 1)
+                .Where(u => u.Role == "Distributer")
                 .OrderByDescending(u => u.UserId)
                 .ToListAsync();
         }
@@ -93,14 +93,14 @@ namespace game_admin.Services
         public async Task<List<User>> GetAllRetailer()
         {
             return await _context.Users
-                .Where(u => u.Role == "Retailer" && u.DeleteStatus == 1)
+                .Where(u => u.Role == "Retailer")
                 .OrderByDescending(u => u.UserId)
                 .ToListAsync();
         }
         public async Task<List<User>> GetAllUser()
         {
             return await _context.Users
-                .Where(u => u.Role == "User" && u.DeleteStatus == 1)
+                .Where(u => u.Role == "User")
                 .OrderByDescending(u => u.UserId)
                 .ToListAsync();
         }

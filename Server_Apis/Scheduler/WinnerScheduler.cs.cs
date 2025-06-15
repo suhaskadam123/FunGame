@@ -17,7 +17,6 @@ namespace Server_Apis.Scheduler
             {
                 var delay = 60000 - DateTime.Now.Millisecond - DateTime.Now.Second * 1000;
                 await Task.Delay(delay, stoppingToken);
-
                 using var scope = _services.CreateScope();
                 var winnerService = scope.ServiceProvider.GetRequiredService<IWinnerService>();
                 await winnerService.DeclareWinnerAsync();
